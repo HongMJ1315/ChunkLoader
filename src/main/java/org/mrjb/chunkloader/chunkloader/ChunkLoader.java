@@ -23,6 +23,7 @@ public class ChunkLoader extends JavaPlugin {
         createConfigFile();
         loadChunksFromConfig();
         this.getCommand("chunk").setExecutor(new CommandEvent(this));
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this); // 註冊事件監聽器
     }
 
     @Override

@@ -11,6 +11,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import static org.bukkit.Bukkit.getLogger;
+
 public class CommandEvent implements CommandExecutor {
 
     private ChunkLoader plugin;
@@ -75,6 +77,14 @@ public class CommandEvent implements CommandExecutor {
     }
 
     private void sendHelpMessage(CommandSender sender) {
+        TextComponent githubLink = new TextComponent("[Github]");
+        githubLink.setColor(net.md_5.bungee.api.ChatColor.BLUE);
+        githubLink.setUnderlined(true);
+        githubLink.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/HongMJ1315/ChunkLoader"));
+
+        TextComponent message = new TextComponent("By Mr_JB ");
+        message.addExtra(githubLink);
+
         if (sender instanceof Player) {
             sender.sendMessage("Chunk Loader Plugin Commands:");
             sender.sendMessage("/chunk - Show clickable options to load or unload the current chunk.");
@@ -84,7 +94,7 @@ public class CommandEvent implements CommandExecutor {
             sender.sendMessage("/chunk unload [x] [z] - Unload the specified chunk.");
             sender.sendMessage("/chunk reset - Reset all chunks to normal loading mode.");
             sender.sendMessage("/chunk help - Show this help message.");
-            sender.sendMessage("By Mr_JB");
+            ((Player) sender).spigot().sendMessage(message);
         } else {
             sender.sendMessage("Chunk Loader Plugin Commands:");
             sender.sendMessage("/chunk load [x] [z] - Load the specified chunk.");
@@ -92,6 +102,7 @@ public class CommandEvent implements CommandExecutor {
             sender.sendMessage("/chunk reset - Reset all chunks to normal loading mode.");
             sender.sendMessage("/chunk help - Show this help message.");
             sender.sendMessage("By Mr_JB");
+            sender.spigot().sendMessage(message);
         }
     }
 
@@ -121,10 +132,12 @@ public class CommandEvent implements CommandExecutor {
             chunk.setForceLoaded(true);
             plugin.addLoadedChunk(chunkKey);
             sender.sendMessage("Chunk at " + x + ", " + z + " in world " + worldName + " is now force loaded.");
+            getLogger().info("Chunk at " + x + ", " + z + " in world " + worldName + " is now force loaded.");
         } else if (action.equalsIgnoreCase("unload")) {
             chunk.setForceLoaded(false);
             plugin.removeLoadedChunk(chunkKey);
             sender.sendMessage("Chunk at " + x + ", " + z + " in world " + worldName + " is now unloaded.");
+            getLogger().info("Chunk at " + x + ", " + z + " in world " + worldName + " is now unloaded.");
         }
     }
 }
