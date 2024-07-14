@@ -1,6 +1,6 @@
 name: ChunkLoader
 version: '${project.version}'
-main: org.mrjb.chunkloader.chunkloader.ChunkLoader
+main: dev.mrjb.chunkloader.chunkloader.ChunkLoader
 api-version: '1.20'
 description: A plugin to force load and unload chunks.
 commands:

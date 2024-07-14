@@ -1,4 +1,4 @@
-package org.mrjb.chunkloader.chunkloader;
+package dev.mrjb.chunkloader.chunkloader;
 
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.event.EventHandler;

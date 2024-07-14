@@ -1,7 +1,6 @@
-package org.mrjb.chunkloader.chunkloader;
+package dev.mrjb.chunkloader.chunkloader;
 
 import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;

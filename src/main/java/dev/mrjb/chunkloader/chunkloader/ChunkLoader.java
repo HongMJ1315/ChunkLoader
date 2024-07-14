@@ -1,4 +1,4 @@
-package org.mrjb.chunkloader.chunkloader;
+package dev.mrjb.chunkloader.chunkloader;
 
 import org.bukkit.Chunk;
 import org.bukkit.configuration.file.FileConfiguration;
