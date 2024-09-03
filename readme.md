@@ -1,7 +1,7 @@
 # ChunkLoader Plugin
 
 ## Overview
-[中文]
+[中文](https://github.com/HongMJ1315/ChunkLoader/blob/master/readme_tw.md)
 
 The **ChunkLoader** plugin is designed for Minecraft servers to allow players to manually force-load or unload specific chunks. This can be useful for ensuring certain areas of your server remain active and loaded, even if no players are nearby.
 
